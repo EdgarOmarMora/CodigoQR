@@ -5,9 +5,9 @@ const app=express();
 const PORT=3000;
 
 //Define QR generation route.
-app.get('/qrcode',(req,res)=>{
+app.get('/qrcode/:data',(req,res)=>{
     //Define the URL that we would like to convert into qr code.
-    const url='https://www.example.com';
+    const url=req.params.data;
 
     //Convert URL->dataURL (QR image representation).
     QRCode.toDataURL(url,(err,qrCodeUrl)=>{
@@ -36,5 +36,5 @@ app.get('/qrcode',(req,res)=>{
 
 //Start the server and listen to request.
 app.listen(PORT, ()=>{
-    console.log(`Server is runing on port ${PORT}`);
+    console.log(`Server is runing on port http://localhost:${PORT}/qrcode`);
 });

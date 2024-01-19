@@ -8,7 +8,8 @@ let data={
 };
 
 let stJson=JSON.stringify(data);
-qr.toString(stJson,{type:"terminal"}, function(err, code){
+
+qr.toDataURL(stJson, function(err,code){
     if(err) return console.log("error");
     console.log(code);
 });

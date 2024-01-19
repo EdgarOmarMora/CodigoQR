@@ -1,0 +1,3 @@
+npm init -y							'Crea el proyecto.
+npm install qrcode						'Instala el paquete para la generación de QR's.
+node index.js							'Ejecuta el archivo index.js.

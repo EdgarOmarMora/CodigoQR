@@ -7,7 +7,7 @@ const PORT=3000;
 //Define QR generation route.
 app.get('/qrcode/:data',(req,res)=>{
     //Define the URL that we would like to convert into qr code.
-    const url=req.params.data;
+    const url='https://verificacfdi.facturaelectronica.sat.gob.mx/?'+req.params.data;
 
     //Convert URL->dataURL (QR image representation).
     QRCode.toDataURL(url,(err,qrCodeUrl)=>{

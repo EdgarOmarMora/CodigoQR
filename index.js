@@ -9,7 +9,6 @@ let data={
 
 let stJson=JSON.stringify(data);
 
-qr.toDataURL(stJson, function(err,code){
+qr.toFile("qr.png",stJson, function(err){
     if(err) return console.log("error");
-    console.log(code);
 });

@@ -2,7 +2,9 @@
 const express=require('express');
 const QRCode=require('qrcode');
 const app=express();
-const PORT=3000;
+require("dotenv").config();
+
+const port=process.env.PORT;
 
 //Define QR generation route.
 app.get('/qrcode/:data',(req,res)=>{
@@ -35,6 +37,6 @@ app.get('/qrcode/:data',(req,res)=>{
 });
 
 //Start the server and listen to request.
-app.listen(PORT, ()=>{
-    console.log(`Server is runing on port http://localhost:${PORT}/qrcode`);
+app.listen(port, ()=>{
+    console.log(`Server is runing on port http://localhost:${port}/qrcode`);
 });
